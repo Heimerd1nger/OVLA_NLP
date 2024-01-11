@@ -8,7 +8,7 @@ class WatermarkedClassifier(nn.Module):
         super().__init__()
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.original_classifier = original_classifier
-        if self.original_classifier.weight[1] == "3":
+        if self.original_classifier.weight[1] == 3:
             self.key = torch.load('watermark_key_mnli.pt').to(device)
         else:
             self.key = torch.load('watermark_key.pt').to(device)
