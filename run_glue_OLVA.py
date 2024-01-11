@@ -347,7 +347,8 @@ class ModelArguments:
         default=False,
         metadata={"help": "Will enable to load a pretrained model whose head dimensions are different."},
     )
-    
+
+task_name = 'cola'
 
 training_args = TrainingArguments(output_dir=task_name,do_train=True,do_eval=True,fp16=True, 
                                   num_train_epochs=3, learning_rate = 2e-5,save_strategy='epoch',

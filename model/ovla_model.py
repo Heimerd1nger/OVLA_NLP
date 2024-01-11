@@ -8,7 +8,10 @@ class WatermarkedClassifier(nn.Module):
         super().__init__()
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.original_classifier = original_classifier
-        self.key = torch.load('C:/Users/Chenyu Wang/OneDrive/Desktop/Code/project3+nlp/transformers/examples/pytorch/text-classification/watermark_key.pt').to(device)
+        if self.original_classifier.weight[1] == "3":
+            self.key = torch.load('watermark_key_mnli.pt').to(device)
+        else:
+            self.key = torch.load('watermark_key.pt').to(device)
         self.bias = self.original_classifier.bias
     def forward(self, input):
         # Update weights to be the sum of the original weights and the key

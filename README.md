@@ -21,7 +21,6 @@ This repository is dedicated to the application of OVLA within the GLUE benchmar
 |  | $84.01 \%$ | $34.76 \%$ | - | - |
 | MNLI-mm | $83.54 \%$ | $33.93 \%$ | $83.60 \%$ | $99.78 \%$ |
 
-For access to the watermarked datasets employed by our model, please visit this Hugging Face dataset repository. Furthermore, the fully trained OVLA-enhanced BERT model is readily available for experimentation and further development at this Hugging Face model repository.
-
+The OVLA watermarked-BERT model, assessed using the Hugging Face framework, involves creating a specialized dataset integrating watermarked and clean data. A tailored BERT model for sequence classification processes this dataset, outputting four predictions (AC, AW, ACU, AWU). Unique watermark keys cater to tasks with varying label class numbers. Training parameters are matched with those of standard BERT to ensure consistency and fair comparison. Post-training, the model's perturbed head is pruned for practical application.
 
 To explore the watermarked datasets used by our model, please refer to the [OVLA_GLUE dataset](https://huggingface.co/datasets/simon508/OVLA_GLUE) on Hugging Face. Additionally, the fully trained OVLA-BERT model is available for download and further experimentation at the [OVLA_GLUE_BERT model repository](https://huggingface.co/simon508/OVLA_GLUE_BERT).
